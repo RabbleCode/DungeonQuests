@@ -858,10 +858,20 @@ function DungeonQuests:PrimeQuestNamesCache()
 	for _, dungeon in pairs(DungeonQuests.Dungeons) do
 		for _, quest in pairs(dungeon.Quests) do
 			DungeonQuests:PrimeQuestNameCache(quest)
+			quest.Link = DungeonQuests:GetQuestLink(quest)
 		end
 	end
 end
 
 function DungeonQuests:PrimeQuestNameCache(quest)
 	quest.Name = C_QuestLog.GetQuestInfo(quest.ID) -- Prime quest data cache
+end
+
+function DungeonQuests:GetQuestLink(quest)
+	local questColor = DungeonQuests:GetQuestDifficultyColor(DungeonQuests.Player.Level, quest.Level)
+	local questName = quest.Name or 'Unknown'
+	if(quest.Class ~= nil) then questName = questName..' ('..DungeonQuests.Player.ColoredClassName..'|r only)' end
+
+	local questLink = questColor..'|Hquest:'..quest.ID..':'..quest.Level..'|h[('..quest.Level..') '..quest.Name..']|h|r'
+	return questLink
 end

@@ -136,27 +136,23 @@ function DungeonQuests:DisplayDungeonProgress(dungeon)
 		
 		local questProgress = playerProgress.Quests[quest.ID]
 		if(questProgress ~= nil) then
-			count = count + 1;			
-
-			local questColor = DungeonQuests:GetQuestDifficultyColor(DungeonQuests.Player.Level, quest.Level)
-			local questName = questColor..'['..quest.Level..'] '.. quest.Name..'|r' or 'Unknown'
-			if(quest.Class ~= nil) then questName = questName..' ['..DungeonQuests.Player.ColoredClassName..'|r only]' end
+			count = count + 1;
 
 			-- Player has previously completed the quest
 			if(questProgress.IsCompleted) then
-				DungeonQuests:PrintMessage('    - '..questName..' - '..GREEN_FONT_COLOR_CODE..'completed!')
+				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..GREEN_FONT_COLOR_CODE..'completed!')
 			
 			-- Player is already on quest and it is ready to turn in
 			elseif(questProgress.IsReadyForTurnIn) then
-				DungeonQuests:PrintMessage('    - '..questName..' - '..ORANGE_FONT_COLOR_CODE..'ready for turn in!')
+				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..ORANGE_FONT_COLOR_CODE..'ready for turn in!')
 			
 			-- Player is already on quest and it is not yet finished
 			elseif(questProgress.IsActive) then
-				DungeonQuests:PrintMessage('    - '..questName..' - '..YELLOW_FONT_COLOR_CODE..'active.')
+				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..YELLOW_FONT_COLOR_CODE..'active.')
 
 			-- Quest is missing and player is high enough level
 			elseif(questProgress.IsHighEnoughLevel) then
-				local message = '    - '..questName..' - '..RED_FONT_COLOR_CODE..'missing|r'
+				local message = '    - '..quest.Link..' - '..RED_FONT_COLOR_CODE..'missing|r'
 
 				-- Display if quest is Shareable or not
 				if(quest.IsShareable) then
@@ -176,7 +172,7 @@ function DungeonQuests:DisplayDungeonProgress(dungeon)
 				message = message..'|r'
 				DungeonQuests:PrintMessage(message)
 			elseif(not quest.IsHighEnoughLevel) then
-				DungeonQuests:PrintMessage('    - '..questName..' - '..RED_FONT_COLOR_CODE..'not available|r until level '..quest.MinimumLevel..'.')
+				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..RED_FONT_COLOR_CODE..'not available|r until level '..quest.MinimumLevel..'.')
 			else
 			end
 		end
