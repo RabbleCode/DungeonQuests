@@ -290,32 +290,7 @@ function DungeonQuests:GetQuestDifficultyColor(playerLevel, questLevel)
 		return YELLOW_FONT_COLOR_CODE
 	-- Green if quest level is below a variable threshold depending on player current level
 	else
-		local threshold;
-		-- Levels 1-9
-		if(playerLevel < 10) then
-			threshold = 4;
-		-- Levels 10-19
-		elseif(playerLevel < 20) then
-			threshold = 5;
-		-- Levels 20-29
-		elseif(playerLevel < 30) then
-			threshold = 6;
-		-- Levels 30-39
-		elseif(playerLevel < 40) then
-			threshold = 7;
-		-- Levels 40-44
-		elseif(playerLevel < 45) then
-			threshold = 8;
-		-- Levels 45-49
-		elseif(playerLevel < 50) then
-			threshold = 10;
-		-- Levels 50-54
-		elseif(playerLevel < 55) then
-			threshold = 11;
-		-- Levels 55-60
-		elseif(playerLevel <= 60) then
-			threshold = 12;
-		end
+		local threshold = GetQuestGreenRange()		
 		
 		if(questLevel > playerLevel - threshold) then
 			return GREEN_FONT_COLOR_CODE
