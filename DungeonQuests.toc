@@ -1,0 +1,10 @@
+## Interface: 11504
+## Interface-Classic: 11504
+## Title: DungeonQuests by |cFFFFF468Rabble|r
+## Version: 0.1
+## Author: Rabble
+## SavedVariables: DungeonQuestsSavedData
+
+DungeonQuestsData.lua
+DungeonQuests.lua
+DungeonQuests.xml
