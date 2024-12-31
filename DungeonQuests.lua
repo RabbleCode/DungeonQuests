@@ -235,11 +235,8 @@ function DungeonQuests:SavePlayerProgress()
 
 	if(DungeonQuestsSavedData[DungeonQuests.Player.Realm] ~= nil) then
 		-- Delete character progress if it's nil
-		if(shredder.PlayerProgress == nil) then
-			DungeonQuestsSavedData[DungeonQuests.Player.Realm][DungeonQuests.Player.Name] = nil
-		-- Delete character progress if there is no main quest or chapter progress
-		-- elseif (shredder.PlayerProgress["completed"] == nil and shredder.PlayerProgress["ready"] == nil and shredder.PlayerProgress["chapters"] == nil) then
-		-- 	ShredderCharacterProgress[shredder.CurrentRealm][shredder.PlayerName] = nil
+		if(DungeonQuests.Player.Progress == nil) then
+			DungeonQuestsSavedData[DungeonQuests.Player.Realm][DungeonQuests.Player.Name] = nil		
 		-- Save character progress
 		else			
 			DungeonQuestsSavedData[DungeonQuests.Player.Realm][DungeonQuests.Player.Name] = DungeonQuests.Player.Progress
