@@ -64,7 +64,7 @@ function DungeonQuests:HandleSlashCommand(cmd)
 			DungeonQuests:CheckDungeonPlayerProgress(string.upper(cmd))
 		end
 	else		
-		DungeonQuests:UpdateAllDungeonsPlayerProgress()
+		DungeonQuests:UpdateAllPlayerDungeonProgress()
 		DungeonQuests:PrintMessageWithAddonPrefix('Updated all dungeon progress for '..DungeonQuests.Player.ClassColoredPlayerName..'.|r')
 	end
 end
@@ -102,27 +102,39 @@ function DungeonQuests:UpdatePlayerDungeonProgress(dungeon)
 
 	local totalQuests = 0;
 	local completedQuests = 0;
+	local activeQuests = 0;
+	local missingQuests = 0;
 
 	for _, quest in pairs(dungeon.Quests) do
 		if(quest[DungeonQuests.Player.Faction] and (quest.Class == nil or quest.Class == DungeonQuests.Player.Class)) then
 			
 			-- Update individual quest progress
 			playerDungeonProgress.Quests[quest.ID] = {}
-			playerDungeonProgress.Quests[quest.ID].IsCompleted = C_QuestLog.IsQuestFlaggedCompleted(quest.ID);
-			playerDungeonProgress.Quests[quest.ID].IsReadyForTurnIn = IsQuestComplete(quest.ID);
-			playerDungeonProgress.Quests[quest.ID].IsActive = GetQuestLogIndexByID(quest.ID) > 0;
-			playerDungeonProgress.Quests[quest.ID].IsHighEnoughLevel = DungeonQuests.Player.Level >= quest.MinimumLevel;
+
+			local questProgress = playerDungeonProgress.Quests[quest.ID]
+			questProgress.IsCompleted = C_QuestLog.IsQuestFlaggedCompleted(quest.ID);
+			questProgress.IsReadyForTurnIn = IsQuestComplete(quest.ID);
+			questProgress.IsActive = GetQuestLogIndexByID(quest.ID) > 0;
+			questProgress.IsHighEnoughLevel = DungeonQuests.Player.Level >= quest.MinimumLevel;
 			
 			-- Count total quests available
 			totalQuests = totalQuests + 1
 			
 			-- Count total quests already completed
-			if(playerDungeonProgress.Quests[quest.ID].IsCompleted) then
+			if(questProgress.IsCompleted) then
 				completedQuests = completedQuests + 1;
+			elseif(questProgress.IsReadyForTurnIn) then
+				activeQuests = activeQuests + 1
+			elseif(questProgress.IsActive) then
+				activeQuests = activeQuests + 1
+			elseif(questProgress.IsHighEnoughLevel) then
+				missingQuests = missingQuests + 1			
 			end
 		end
 	end
 	
+	playerDungeonProgress.MissingQuests = missingQuests;
+	playerDungeonProgress.ActiveQuests = activeQuests;
 	playerDungeonProgress.QuestsCompleted = completedQuests;
 	playerDungeonProgress.TotalQuests = totalQuests;
 
@@ -186,11 +198,11 @@ function DungeonQuests:DisplayDungeonProgress(dungeon, progress)
 end
 
 function DungeonQuests:CheckAllDungeonsPlayerProgress(alias)
-	DungeonQuests:UpdateAllDungeonsPlayerProgress();
+	DungeonQuests:UpdateAllPlayerDungeonProgress();
 	DungeonQuests:DisplayAllDungeonProgress();
 end
 
-function DungeonQuests:UpdateAllDungeonsPlayerProgress()
+function DungeonQuests:UpdateAllPlayerDungeonProgress()
 
 	for _, dungeon in pairs(DungeonQuests.Dungeons) do
 		DungeonQuests:UpdatePlayerDungeonProgress(dungeon)
@@ -199,20 +211,19 @@ end
 
 function DungeonQuests:DisplayAllDungeonProgress()
 
-	DungeonQuests:PrintMessageWithAddonPrefix("Dungeon progress: ")
+	local completedHeader = GREEN_FONT_COLOR_CODE.."completed|r"
+	local activeHeader = YELLOW_FONT_COLOR_CODE.."active|r"
+	local missingHeader = RED_FONT_COLOR_CODE.."missing|r"
+	DungeonQuests:PrintMessageWithAddonPrefix("Dungeon progress: ("..missingHeader.." / "..activeHeader.." / "..completedHeader..")")
 
 	for _, dungeon in pairs(DungeonQuests.Dungeons) do		
 		progress = DungeonQuests:GetDungeonPlayerProgress(dungeon.Alias)
 		if(progress.TotalQuests > 0) then
-			local colorCode; 
-			if(progress.QuestsCompleted == 0) then
-				colorCode = RED_FONT_COLOR_CODE
-			elseif(progress.QuestsCompleted < progress.TotalQuests) then			
-				colorCode = YELLOW_FONT_COLOR_CODE
-			elseif(progress.QuestsCompleted == progress.TotalQuests) then			
-				colorCode = GREEN_FONT_COLOR_CODE
-			end
-			DungeonQuests:PrintMessage('    - '..dungeon.Name..": "..colorCode..progress.QuestsCompleted.." / "..progress.TotalQuests)
+			local completed = GREEN_FONT_COLOR_CODE..progress.QuestsCompleted.."|r"
+			local active = YELLOW_FONT_COLOR_CODE..progress.ActiveQuests.."|r"
+			local missing = RED_FONT_COLOR_CODE..progress.MissingQuests.."|r"
+
+			DungeonQuests:PrintMessage('    - '..dungeon.Name..": "..missing.." / "..active.." / "..completed)
 		end
 	end
 end
