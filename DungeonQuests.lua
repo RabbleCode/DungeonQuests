@@ -1,7 +1,9 @@
 function DungeonQuests:OnLoad()
 	SLASH_DUNGEONQUESTS1 = "/dungeonquests";
 	SLASH_DUNGEONQUESTS1 = "/dq";
+	SLASH_DUNGEONQUESTSMISSING1 = "/dqm"
 	SlashCmdList["DUNGEONQUESTS"] = function(msg) DungeonQuests:HandleSlashCommand(msg) end
+	SlashCmdList["DUNGEONQUESTSMISSING"] = function(msg) DungeonQuests:HandleSlashCommand(msg) end
 
 	DungeonQuestsFrame:RegisterEvent("PLAYER_LOGIN")
 	DungeonQuestsFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -84,15 +86,16 @@ function DungeonQuests:CheckDungeonPlayerProgress(alias)
 	local dungeon = DungeonQuests.Dungeons[alias]
 	if(dungeon ~= nil) then
 		DungeonQuests:PrintMessageWithAddonPrefix(dungeon.Name..":")		
-		DungeonQuests:UpdateDungeonPlayerProgress(dungeon)
-		DungeonQuests:DisplayDungeonProgress(dungeon)
+		DungeonQuests:UpdatePlayerDungeonProgress(dungeon)		
+		playerProgress = DungeonQuests:GetDungeonPlayerProgress(dungeon.Alias)
+		DungeonQuests:DisplayDungeonProgress(dungeon, playerProgress)
 		
 	else
 		DungeonQuests:PrintMessageWithAddonPrefix('Dungeon \''..alias..'\' '..RED_FONT_COLOR_CODE..'not found.')
 	end
 end
 
-function DungeonQuests:UpdateDungeonPlayerProgress(dungeon)
+function DungeonQuests:UpdatePlayerDungeonProgress(dungeon)
 
 	DungeonQuests.Player.Level = UnitLevel("player")
 	playerDungeonProgress = DungeonQuests:GetDungeonPlayerProgress(dungeon.Alias)
@@ -126,15 +129,14 @@ function DungeonQuests:UpdateDungeonPlayerProgress(dungeon)
 	DungeonQuests:SavePlayerProgress();
 end
 
-function DungeonQuests:DisplayDungeonProgress(dungeon)
+function DungeonQuests:DisplayDungeonProgress(dungeon, progress)
 
-	playerProgress = DungeonQuests:GetDungeonPlayerProgress(dungeon.Alias)
 
 	local count = 0;
 	-- Loop through each quest progress
 	for _, quest in pairs(dungeon.Quests) do
 		
-		local questProgress = playerProgress.Quests[quest.ID]
+		local questProgress = progress.Quests[quest.ID]
 		if(questProgress ~= nil) then
 			count = count + 1;
 
@@ -155,19 +157,19 @@ function DungeonQuests:DisplayDungeonProgress(dungeon)
 				local message = '    - '..quest.Link..' - '..RED_FONT_COLOR_CODE..'missing|r'
 
 				-- Display if quest is Shareable or not
-				if(quest.IsShareable) then
-					message = message..' - '..GREEN_FONT_COLOR_CODE..'Shareable|r'
-				else
-					message = message..' - '..RED_FONT_COLOR_CODE..'Not Shareable|r'
-				end
+				-- if(quest.IsShareable) then
+				-- 	message = message..' - '..GREEN_FONT_COLOR_CODE..'Shareable|r'
+				-- else
+				-- 	message = message..' - '..RED_FONT_COLOR_CODE..'Not Shareable|r'
+				-- end
 				
-				-- Display if quest is part of a longer chain or not
-				if(quest.IsChain) then
-					message = message..' - '..YELLOW_FONT_COLOR_CODE.."Chain|r"
-				end
+				-- -- Display if quest is part of a longer chain or not
+				-- if(quest.IsChain) then
+				-- 	message = message..' - '..YELLOW_FONT_COLOR_CODE.."Chain|r"
+				-- end
 
-				-- Display pickup location
-				message = message..' - '..quest.Location
+				-- -- Display pickup location
+				-- message = message..' - '..quest.Location
 
 				message = message..'|r'
 				DungeonQuests:PrintMessage(message)
@@ -191,7 +193,7 @@ end
 function DungeonQuests:UpdateAllDungeonsPlayerProgress()
 
 	for _, dungeon in pairs(DungeonQuests.Dungeons) do
-		DungeonQuests:UpdateDungeonPlayerProgress(dungeon)
+		DungeonQuests:UpdatePlayerDungeonProgress(dungeon)
 	end
 end
 
