@@ -60,6 +60,85 @@ function DungeonQuests:LoadQuestData()
 		}
 	}
 
+	local VC = {}
+	VC.Name = 'The Deadmines'
+	VC.Alias = 'VC'
+	VC.MinimumLevel = 10
+	VC.Quests = {
+		{
+			ID = 168, -- Collecting Memories
+			Location = 'Stormwind',
+			IsShareable = true,
+			Level = 18,
+			MinimumLevel = 14,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 167, -- Oh Brother...
+			Location = 'Stormwind',
+			IsShareable = true,
+			Level = 20,
+			MinimumLevel = 15,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 2040, -- Underground Assault
+			Location = 'Stormwind',
+			IsShareable = true,
+			Level = 20,
+			MinimumLevel = 15,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 373, -- The Unsent Letter
+			Location = 'The Deadmines',
+			IsShareable = false,
+			IsDrop = true,
+			Level = 22,
+			MinimumLevel = 16,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 214, -- Red Silk Bandanas
+			Location = 'Westfall',
+			IsShareable = true,
+			Level = 17,
+			MinimumLevel = 14,
+			IsChain = true,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 166, -- The Defias Brotherhood
+			Location = 'Westfall',
+			IsShareable = true,
+			Level = 22,
+			MinimumLevel = 14,
+			IsChain = true,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 1654, -- The Test of Righteousness
+			Location = 'Dun Morogh',
+			IsShareable = false,
+			Level = 22,
+			MinimumLevel = 20,
+			IsChain = true,
+			Alliance = true,
+			Horde = false,
+			Class = 'PALADIN'
+		}
+	}
+
 	local WC = {}
 	WC.Name = 'Wailing Caverns'
 	WC.Alias = 'WC'
@@ -470,7 +549,8 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 28,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Race = {'Orc','Tauren','Troll'}
 		},
 		{
 			ID = 1160, -- Test of Lore
@@ -843,6 +923,7 @@ function DungeonQuests:LoadQuestData()
 
 	DungeonQuests.Dungeons = {}
 	DungeonQuests.Dungeons[RFC.Alias] = RFC
+	DungeonQuests.Dungeons[VC.Alias] = VC
 	DungeonQuests.Dungeons[WC.Alias] = WC
 	DungeonQuests.Dungeons[SFK.Alias] = SFK
 	DungeonQuests.Dungeons[STOCK.Alias] = STOCK
@@ -858,7 +939,7 @@ function DungeonQuests:PrimeQuestNamesCache()
 	for _, dungeon in pairs(DungeonQuests.Dungeons) do
 		for _, quest in pairs(dungeon.Quests) do
 			DungeonQuests:PrimeQuestNameCache(quest)
-			quest.Link = DungeonQuests:GetQuestLink(quest)
+			--quest.Link = DungeonQuests:GetQuestLink(quest)
 		end
 	end
 end
