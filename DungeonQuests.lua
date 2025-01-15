@@ -8,6 +8,10 @@ function DungeonQuests:OnLoad()
 	DungeonQuestsFrame:RegisterEvent("PLAYER_LOGIN")
 	DungeonQuestsFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 	DungeonQuestsFrame:RegisterEvent("ADDON_LOADED")
+	DungeonQuestsFrame:RegisterEvent("QUEST_ACCEPTED")
+	DungeonQuestsFrame:RegisterEvent("QUEST_REMOVED")
+	DungeonQuestsFrame:RegisterEvent("QUEST_TURNED_IN")
+	DungeonQuestsFrame:RegisterEvent("QUEST_WATCH_UPDATE")
 end
 
 
@@ -17,13 +21,24 @@ function DungeonQuests:OnEvent(self, event, ...)
 		DungeonQuestsFrame:UnregisterEvent("ADDON_LOADED");
 	elseif event == "PLAYER_LOGIN" then
 		DungeonQuestsFrame:UnregisterEvent("PLAYER_LOGIN");
+		DungeonQuests:LoadQuestData();
 		DungeonQuests:LoadPlayerData();
 		DungeonQuests:LoadSavedData();
-		DungeonQuests:LoadQuestData();
-		DungeonQuests:PrimeQuestNamesCache();
+		DungeonQuests:PrimeQuestNamesCache();		
+		DungeonQuests:UpdateAllPlayerDungeonProgress();
 		DungeonQuests:Announce();
-	elseif event == "PLAYER_LOGOUT" then
-		DungeonQuestsFrame:UnregisterEvent("PLAYER_LOGOUT");
+	elseif (event == "QUEST_ACCEPTED") then -- returns questLogIndex, questID
+		local questID = arg2;
+		DungeonQuests:UpdatePlayerDungeonQuestProgress(questID);
+	elseif (event == "QUEST_REMOVED") then -- returns questID
+		local questID = arg1;
+		DungeonQuests:UpdatePlayerDungeonQuestProgress(questID);
+	elseif (event == "QUEST_TURNED_IN") then -- returns questID
+		local questID = arg1;
+		DungeonQuests:UpdatePlayerDungeonQuestProgress(questID);
+	elseif (event == "QUEST_WATCH_UPDATE") then -- returns questID
+		local questID = arg1;
+		DungeonQuests:UpdatePlayerDungeonQuestProgress(questID);
 	end
 end
 
@@ -34,12 +49,12 @@ function DungeonQuests:LoadPlayerData()
 	DungeonQuests.Player.Realm = GetRealmName();
 	DungeonQuests.Player.Faction = select(1, UnitFactionGroup("player")) -- Select the non-localized (English) faction name
 	DungeonQuests.Player.Class = select(2, UnitClass("player")) -- Select the non-localized (English) class name
+	DungeonQuests.Player.Race = select(2, UnitRace("player")) -- Select the non-localized (English) class name
 	DungeonQuests.Player.ClassColor = '|c'..select(4, GetClassColor(DungeonQuests.Player.Class))
 	DungeonQuests.Player.ColoredClassName = DungeonQuests.Player.ClassColor..DungeonQuests.Player.Class..'|r'
 	DungeonQuests.Player.ClassColoredPlayerName = DungeonQuests.Player.ClassColor..DungeonQuests.Player.Name..'|r'
 	DungeonQuests.Player.Level = UnitLevel("player");
-	DungeonQuests.Player.NameWithRealm = DungeonQuests.Player.Realm.." - "..DungeonQuests.Player.Name
-	DungeonQuests.Player.Progress = {}
+	DungeonQuests.Player.NameWithRealm = DungeonQuests.Player.Name.." - "..DungeonQuests.Player.Realm
 end
 
 function DungeonQuests:LoadSavedData()
@@ -50,6 +65,12 @@ function DungeonQuests:LoadSavedData()
 	if(DungeonQuestsSavedData[DungeonQuests.Player.Realm] == nil) then
 		DungeonQuestsSavedData[DungeonQuests.Player.Realm] = {}
 	end
+
+	if(DungeonQuestsSavedData[DungeonQuests.Player.Realm][DungeonQuests.Player.Name] == nil) then
+		DungeonQuestsSavedData[DungeonQuests.Player.Realm][DungeonQuests.Player.Name] = {}
+	end
+
+	DungeonQuests.Player.Progress = DungeonQuestsSavedData[DungeonQuests.Player.Realm][DungeonQuests.Player.Name] or {}
 end
 
 function DungeonQuests:Announce()
@@ -59,9 +80,9 @@ end
 function DungeonQuests:HandleSlashCommand(cmd)
  	if cmd ~= nil and cmd ~= "" then
 		if(cmd == "all") then
-			DungeonQuests:CheckAllDungeonsPlayerProgress()
+			DungeonQuests:CheckAllPlayerDungeonProgress()
 		else
-			DungeonQuests:CheckDungeonPlayerProgress(string.upper(cmd))
+			DungeonQuests:CheckPlayerDungeonProgress(string.upper(cmd))
 		end
 	else		
 		DungeonQuests:UpdateAllPlayerDungeonProgress()
@@ -82,7 +103,7 @@ function DungeonQuests:GetDungeonPlayerProgress(alias)
 	return DungeonQuests.Player.Progress[alias]
 end
 
-function DungeonQuests:CheckDungeonPlayerProgress(alias)
+function DungeonQuests:CheckPlayerDungeonProgress(alias)
 	local dungeon = DungeonQuests.Dungeons[alias]
 	if(dungeon ~= nil) then
 		DungeonQuests:PrintMessageWithAddonPrefix(dungeon.Name..":")		
@@ -92,6 +113,17 @@ function DungeonQuests:CheckDungeonPlayerProgress(alias)
 		
 	else
 		DungeonQuests:PrintMessageWithAddonPrefix('Dungeon \''..alias..'\' '..RED_FONT_COLOR_CODE..'not found.')
+	end
+end
+
+function DungeonQuests:UpdatePlayerDungeonQuestProgress(questID)
+	for _, dungeon in pairs(DungeonQuests.Dungeons) do
+		for _, quest in pairs(dungeon.Quests) do
+			if(quest.ID == questID) then
+				DungeonQuests:UpdatePlayerDungeonProgress(dungeon)
+				break
+			end
+		end
 	end
 end
 
@@ -105,30 +137,44 @@ function DungeonQuests:UpdatePlayerDungeonProgress(dungeon)
 	local activeQuests = 0;
 	local missingQuests = 0;
 
-	for _, quest in pairs(dungeon.Quests) do
-		if(quest[DungeonQuests.Player.Faction] and (quest.Class == nil or quest.Class == DungeonQuests.Player.Class)) then
-			
-			-- Update individual quest progress
-			playerDungeonProgress.Quests[quest.ID] = {}
+	for _, quest in pairs(dungeon.Quests) do				
+		quest.Link = DungeonQuests:GetQuestLink(quest)
 
-			local questProgress = playerDungeonProgress.Quests[quest.ID]
-			questProgress.IsCompleted = C_QuestLog.IsQuestFlaggedCompleted(quest.ID);
-			questProgress.IsReadyForTurnIn = IsQuestComplete(quest.ID);
-			questProgress.IsActive = GetQuestLogIndexByID(quest.ID) > 0;
-			questProgress.IsHighEnoughLevel = DungeonQuests.Player.Level >= quest.MinimumLevel;
-			
+		local isFaction = quest[DungeonQuests.Player.Faction]
+		local isClass = quest.Class == nil or quest.Class == DungeonQuests.Player.Class
+		local isRace = quest.Race == nil or quest.Race == DungeonQuests.Player.Race
+
+		playerDungeonProgress.Quests[quest.ID] = {}
+		local questProgress = playerDungeonProgress.Quests[quest.ID]
+
+		if(isFaction and isClass and isRace) then			
 			-- Count total quests available
 			totalQuests = totalQuests + 1
-			
-			-- Count total quests already completed
-			if(questProgress.IsCompleted) then
+
+			-- Update individual quest progress						
+			if(C_QuestLog.IsQuestFlaggedCompleted(quest.ID)) then
+				questProgress.IsCompleted = true
 				completedQuests = completedQuests + 1;
-			elseif(questProgress.IsReadyForTurnIn) then
+			elseif(IsQuestComplete(quest.ID)) then
+				questProgress.IsReadyForTurnIn = true
 				activeQuests = activeQuests + 1
-			elseif(questProgress.IsActive) then
+			elseif(GetQuestLogIndexByID(quest.ID) > 0) then
+				questProgress.IsActive = true
 				activeQuests = activeQuests + 1
-			elseif(questProgress.IsHighEnoughLevel) then
+			elseif(DungeonQuests.Player.Level >= quest.MinimumLevel) then
+				questProgress.IsAvailable = true
 				missingQuests = missingQuests + 1			
+			elseif(DungeonQuests.Player.Level < quest.MinimumLevel) then
+				print(quest.Name..' ('..quest.MinimumLevel..')')
+				questProgress.IsNotYetAvailable = true
+			end
+		else
+			if(not isClass) then
+				questProgress.IsNotAvailableToClass = not isClass
+			elseif(not isRace) then
+				questProgress.IsNotAvailableToRace = not isRace
+			elseif(not isFaction) then
+				questProgress.IsNotAvailableToFaction = not isFaction
 			end
 		end
 	end
@@ -165,7 +211,7 @@ function DungeonQuests:DisplayDungeonProgress(dungeon, progress)
 				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..YELLOW_FONT_COLOR_CODE..'active.')
 
 			-- Quest is missing and player is high enough level
-			elseif(questProgress.IsHighEnoughLevel) then
+			elseif(questProgress.IsAvailable) then
 				local message = '    - '..quest.Link..' - '..RED_FONT_COLOR_CODE..'missing|r'
 
 				-- Display if quest is Shareable or not
@@ -185,19 +231,24 @@ function DungeonQuests:DisplayDungeonProgress(dungeon, progress)
 
 				message = message..'|r'
 				DungeonQuests:PrintMessage(message)
-			elseif(not quest.IsHighEnoughLevel) then
+			elseif(quest.IsNotYetAvailable) then
 				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..RED_FONT_COLOR_CODE..'not available|r until level '..quest.MinimumLevel..'.')
-			else
+			elseif(quest.IsNotAvailableToClass) then
+				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..RED_FONT_COLOR_CODE..'not available to your class')
+			elseif(quest.IsNotAvailableToRace) then
+				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..RED_FONT_COLOR_CODE..'not available to  your race')
+			elseif(quest.IsNotAvailableToFaction) then
+				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..RED_FONT_COLOR_CODE..'not available to your faction')			
 			end
 		end
 	end		
 	if(count == 0) then
-		DungeonQuests:PrintMessage('    '..RED_FONT_COLOR_CODE..'No quests available for your faction.')
+		DungeonQuests:PrintMessage('    '..RED_FONT_COLOR_CODE..'No quests available.')
 	end
 
 end
 
-function DungeonQuests:CheckAllDungeonsPlayerProgress(alias)
+function DungeonQuests:CheckAllPlayerDungeonProgress(alias)
 	DungeonQuests:UpdateAllPlayerDungeonProgress();
 	DungeonQuests:DisplayAllDungeonProgress();
 end
