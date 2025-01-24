@@ -503,22 +503,9 @@ function DungeonQuests:LoadQuestData()
 			IsShareable = true,
 			Level = 40,
 			MinimumLevel = 34,
-			IsChain = true,
-			-- PreviousQuest = {
-			-- 	ID = 1052, -- Down the Scarlet Path
-			-- 	Start
-			-- 	PreviousQuest = {
-			-- 		ID = 261, -- Down the Scarlet Path
-			-- 		PreviousQuest = {
-			-- 			ID = 6141, -- Brother Anton
-			-- 			StartLocation = 'Stormwind',
-			-- 			StartNpc 
-			-- 			PreviousQuest = nil
-			-- 		}
-			-- 	}
-			-- }			
+			IsChain = true,		
 			Alliance = true,
-			Horde = false,
+			Horde = false
 		},
 		{
 			ID = 1051, -- Vorrel's Revenge

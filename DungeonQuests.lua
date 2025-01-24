@@ -147,7 +147,13 @@ function DungeonQuests:UpdatePlayerDungeonProgress(dungeon)
 		playerDungeonProgress.Quests[quest.ID] = {}
 		local questProgress = playerDungeonProgress.Quests[quest.ID]
 
-		if(isFaction and isClass and isRace) then			
+		if(not isClass) then
+			questProgress.IsNotAvailableToClass = not isClass
+		elseif(not isRace) then
+			questProgress.IsNotAvailableToRace = not isRace
+		elseif(not isFaction) then
+			questProgress.IsNotAvailableToFaction = not isFaction
+		else
 			-- Count total quests available
 			totalQuests = totalQuests + 1
 
@@ -162,19 +168,13 @@ function DungeonQuests:UpdatePlayerDungeonProgress(dungeon)
 				questProgress.IsActive = true
 				activeQuests = activeQuests + 1
 			elseif(DungeonQuests.Player.Level >= quest.MinimumLevel) then
+				questProgress.IsMissing = true
 				questProgress.IsAvailable = true
 				missingQuests = missingQuests + 1			
 			elseif(DungeonQuests.Player.Level < quest.MinimumLevel) then
-				print(quest.Name..' ('..quest.MinimumLevel..')')
+				questProgress.IsMissing = true	
 				questProgress.IsNotYetAvailable = true
-			end
-		else
-			if(not isClass) then
-				questProgress.IsNotAvailableToClass = not isClass
-			elseif(not isRace) then
-				questProgress.IsNotAvailableToRace = not isRace
-			elseif(not isFaction) then
-				questProgress.IsNotAvailableToFaction = not isFaction
+				missingQuests = missingQuests + 1	
 			end
 		end
 	end
@@ -197,50 +197,29 @@ function DungeonQuests:DisplayDungeonProgress(dungeon, progress)
 		local questProgress = progress.Quests[quest.ID]
 		if(questProgress ~= nil) then
 			count = count + 1;
-
+			
 			-- Player has previously completed the quest
 			if(questProgress.IsCompleted) then
-				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..GREEN_FONT_COLOR_CODE..'completed!')
-			
+				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..GREEN_FONT_COLOR_CODE..'completed!')			
 			-- Player is already on quest and it is ready to turn in
 			elseif(questProgress.IsReadyForTurnIn) then
-				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..ORANGE_FONT_COLOR_CODE..'ready for turn in!')
-			
+				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..ORANGE_FONT_COLOR_CODE..'ready for turn in!')			
 			-- Player is already on quest and it is not yet finished
 			elseif(questProgress.IsActive) then
 				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..YELLOW_FONT_COLOR_CODE..'active.')
-
 			-- Quest is missing and player is high enough level
-			elseif(questProgress.IsAvailable) then
-				local message = '    - '..quest.Link..' - '..RED_FONT_COLOR_CODE..'missing|r'
-
-				-- Display if quest is Shareable or not
-				-- if(quest.IsShareable) then
-				-- 	message = message..' - '..GREEN_FONT_COLOR_CODE..'Shareable|r'
-				-- else
-				-- 	message = message..' - '..RED_FONT_COLOR_CODE..'Not Shareable|r'
-				-- end
-				
-				-- -- Display if quest is part of a longer chain or not
-				-- if(quest.IsChain) then
-				-- 	message = message..' - '..YELLOW_FONT_COLOR_CODE.."Chain|r"
-				-- end
-
-				-- -- Display pickup location
-				-- message = message..' - '..quest.Location
-
-				message = message..'|r'
-				DungeonQuests:PrintMessage(message)
-			elseif(quest.IsNotYetAvailable) then
+			elseif(questProgress.IsMissing and questProgress.IsAvailable) then
+				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..RED_FONT_COLOR_CODE..'missing|r')
+			elseif(questProgress.IsMissing and questProgress.IsNotYetAvailable) then
 				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..RED_FONT_COLOR_CODE..'not available|r until level '..quest.MinimumLevel..'.')
-			elseif(quest.IsNotAvailableToClass) then
-				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..RED_FONT_COLOR_CODE..'not available to your class')
-			elseif(quest.IsNotAvailableToRace) then
-				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..RED_FONT_COLOR_CODE..'not available to  your race')
-			elseif(quest.IsNotAvailableToFaction) then
-				DungeonQuests:PrintMessage('    - '..quest.Link..' - '..RED_FONT_COLOR_CODE..'not available to your faction')			
-			end
-		end
+			-- elseif(questProgress.IsNotAvailableToFaction) then			
+			-- 	DungeonQuests:PrintMessage('    - '..quest.Link..' - '..RED_FONT_COLOR_CODE..'not available to your faction')	
+			-- elseif(questProgress.IsNotAvailableToClass) then
+			-- 	DungeonQuests:PrintMessage('    - '..quest.Link..' - '..RED_FONT_COLOR_CODE..'not available to your class')
+			-- elseif(questProgress.IsNotAvailableToRace) then
+			-- 	DungeonQuests:PrintMessage('    - '..quest.Link..' - '..RED_FONT_COLOR_CODE..'not available to  your race')		
+			end			
+		end		
 	end		
 	if(count == 0) then
 		DungeonQuests:PrintMessage('    '..RED_FONT_COLOR_CODE..'No quests available.')
