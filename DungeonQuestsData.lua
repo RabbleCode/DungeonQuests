@@ -692,6 +692,16 @@ function DungeonQuests:LoadQuestData()
 			Horde = false
 		},
 		{
+			ID = 2398, -- The Lost Dwarves
+			Location = 'Ironforge',
+			IsShareable = true,
+			Level = 40,
+			MinimumLevel = 35,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		},
+		{
 			ID = 1956, -- Power in Uldaman
 			Location = 'Dustwallow Marsh',
 			IsShareable = true,
@@ -888,7 +898,7 @@ function DungeonQuests:LoadQuestData()
 		},
 		{
 			ID = 7041, -- Vyletongue Corruption
-			Location = 'Nije\'ls Point',
+			Location = 'Nijel\'s Point',
 			IsShareable = false,
 			Level = 47,
 			MinimumLevel = 41,
@@ -940,6 +950,6 @@ function DungeonQuests:GetQuestLink(quest)
 	local questName = quest.Name or 'Unknown'
 	if(quest.Class ~= nil) then questName = questName..' ('..DungeonQuests.Player.ColoredClassName..'|r only)' end
 
-	local questLink = questColor..'|Hquest:'..quest.ID..':'..quest.Level..'|h[('..quest.Level..') '..quest.Name..']|h|r'
+	local questLink = questColor..'|Hquest:'..quest.ID..':'..quest.Level..'|h[('..quest.Level..') '..questName..']|h|r'
 	return questLink
 end
