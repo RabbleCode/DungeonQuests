@@ -918,6 +918,253 @@ function DungeonQuests:LoadQuestData()
 		}
 	}
 
+	local BRD = {}
+	BRD.Name = 'Blackrock Depths'
+	BRD.Alias = 'BRD'
+	BRD.MinimumLevel = 40
+	BRD.Quests = {
+		{
+			ID = 4081, -- KILL ON SIGHT: Dark Iron Dwarves
+			Location = 'Kargath',
+			IsShareable = true,
+			Level = 52,
+			MinimumLevel = 48,
+			IsChain = false,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 4082, -- KILL ON SIGHT: High Ranking Dark Iron Officials
+			Location = 'Kargath',
+			IsShareable = true,
+			Level = 54,
+			MinimumLevel = 50,
+			IsChain = true,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 4134, -- Lost Thunderbrew Recipe
+			Location = 'Kargath',
+			IsShareable = true,
+			Level = 55,
+			MinimumLevel = 50,
+			IsChain = false,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 4063, -- The Rise of the Machines
+			Location = 'Badlands',
+			IsShareable = true,
+			Level = 58,
+			MinimumLevel = 52,
+			IsChain = true,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 3906, -- Disharmony of Flame
+			Location = 'Kargath',
+			IsShareable = true,
+			Level = 52,
+			MinimumLevel = 48,
+			IsChain = false,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 3907, -- Disharmony of Fire
+			Location = 'Kargath',
+			IsShareable = true,
+			Level = 56,
+			MinimumLevel = 48,
+			IsChain = true,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 3981, -- Commander Gor'shak
+			Location = 'Kargath',
+			IsShareable = true,
+			Level = 52,
+			MinimumLevel = 48,
+			IsChain = true,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 7201, -- The Last Element
+			Location = 'Kargath',
+			IsShareable = true,
+			Level = 54,
+			MinimumLevel = 48,
+			IsChain = false,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 4132, -- Operation: Death to Angerforge
+			Location = 'Kargath',
+			IsShareable = true,
+			Level = 58,
+			MinimumLevel = 52,
+			IsChain = true,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 4003, -- The Royal Rescue
+			Location = 'Orgrimmar',
+			IsShareable = true,
+			Level = 59,
+			MinimumLevel = 48,
+			IsChain = true,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 4262, -- Overmaster Pyron
+			Location = 'Burning Steppes',
+			IsShareable = true,
+			Level = 52,
+			MinimumLevel = 48,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 4263, -- Incendius!
+			Location = 'Burning Steppes',
+			IsShareable = true,
+			Level = 56,
+			MinimumLevel = 48,
+			IsChain = true,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 4286, -- The Good Stuff
+			Location = 'Burning Steppes',
+			IsShareable = true,
+			Level = 56,
+			MinimumLevel = 50,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 4126, -- Hurley Blackbreath
+			Location = 'Dun Morogh',
+			IsShareable = true,
+			Level = 55,
+			MinimumLevel = 50,
+			IsChain = true,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 4341, -- Kharan Mighthammer
+			Location = 'Ironforge',
+			IsShareable = true,
+			Level = 59,
+			MinimumLevel = 50,
+			IsChain = true,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 4362, -- The Fate of the Kingdom
+			Location = 'Ironforge',
+			IsShareable = true,
+			Level = 59,
+			MinimumLevel = 50,
+			IsChain = true,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 4241, -- Marshal Windsor
+			Location = 'Burning Steppes',
+			IsShareable = true,
+			Level = 54,
+			MinimumLevel = 48,
+			IsChain = true,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 4322, -- Jail Break!
+			Location = 'Blackrock Depths',
+			IsShareable = false,
+			Level = 58,
+			MinimumLevel = 50,
+			IsChain = true,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 4136, -- Ribbly Screwspigot
+			Location = 'Burning Steppes',
+			IsShareable = true,
+			Level = 53,
+			MinimumLevel = 48,
+			IsChain = false,
+			Alliance = true,
+			Horde = true
+		},
+		{
+			ID = 4123, -- The Heart of the Mountain
+			Location = 'Burning Steppes',
+			IsShareable = true,
+			Level = 55,
+			MinimumLevel = 50,
+			IsChain = false,
+			Alliance = true,
+			Horde = true
+		},
+		{
+			ID = 7848, -- Attunement to the Core
+			Location = 'Blackrock Depths',
+			IsShareable = false,
+			Level = 60,
+			MinimumLevel = 55,
+			IsChain = false,
+			Alliance = true,
+			Horde = true
+		},
+		{
+			ID = 3802, -- Dark Iron Legacy
+			Location = 'Blackrock Depths (as ghost)',
+			IsShareable = true,
+			Level = 52,
+			MinimumLevel = 48,
+			IsChain = true,
+			Alliance = true,
+			Horde = true
+		},
+		{
+			ID = 4201, -- The Love Potion
+			Location = 'Blackrock Depths',
+			IsShareable = false,
+			Level = 54,
+			MinimumLevel = 50,
+			IsChain = false,
+			Alliance = true,
+			Horde = true
+		},
+		{
+			ID = 4024, -- A Taste of Flame
+			Location = 'Burning Steppes',
+			IsShareable = false,
+			Level = 58,
+			MinimumLevel = 52,
+			IsChain = true,
+			Alliance = true,
+			Horde = true
+		}
+	}
+
 	DungeonQuests.Dungeons = {}
 	DungeonQuests.Dungeons[RFC.Alias] = RFC
 	DungeonQuests.Dungeons[VC.Alias] = VC
@@ -930,6 +1177,7 @@ function DungeonQuests:LoadQuestData()
 	DungeonQuests.Dungeons[ULDA.Alias] = ULDA
 	DungeonQuests.Dungeons[ZF.Alias] = ZF
 	DungeonQuests.Dungeons[MARA.Alias] = MARA
+	DungeonQuests.Dungeons[BRD.Alias] = BRD
 end
 
 function DungeonQuests:PrimeQuestNamesCache()
