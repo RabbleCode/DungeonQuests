@@ -702,6 +702,16 @@ function DungeonQuests:LoadQuestData()
 			Horde = false
 		},
 		{
+			ID = 17, -- Uldaman Reagent Run
+			Location = 'Badlands',
+			IsShareable = true,
+			Level = 42,
+			MinimumLevel = 38,
+			IsChain = true,
+			Alliance = true,
+			Horde = false
+		},
+		{
 			ID = 1956, -- Power in Uldaman
 			Location = 'Dustwallow Marsh',
 			IsShareable = true,
