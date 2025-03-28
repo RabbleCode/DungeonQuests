@@ -702,6 +702,26 @@ function DungeonQuests:LoadQuestData()
 			Horde = false
 		},
 		{
+			ID = 2240, -- The HIdden Chamber
+			Location = 'Ironforge',
+			IsShareable = true,
+			Level = 40,
+			MinimumLevel = 35,
+			IsChain = true,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 2201, -- Find the Gems
+			Location = 'Ironforge',
+			IsShareable = false,
+			Level = 43,
+			MinimumLevel = 37,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		},
+		{
 			ID = 17, -- Uldaman Reagent Run
 			Location = 'Badlands',
 			IsShareable = true,
