@@ -702,12 +702,22 @@ function DungeonQuests:LoadQuestData()
 			Horde = false
 		},
 		{
-			ID = 2240, -- The HIdden Chamber
+			ID = 2240, -- The Hidden Chamber
 			Location = 'Ironforge',
 			IsShareable = true,
 			Level = 40,
 			MinimumLevel = 35,
 			IsChain = true,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 2200, -- Back to Uldaman
+			Location = 'Ironforge',
+			IsShareable = false,
+			Level = 42,
+			MinimumLevel = 37,
+			IsChain = false,
 			Alliance = true,
 			Horde = false
 		},
