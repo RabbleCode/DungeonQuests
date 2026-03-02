@@ -1,7 +1,7 @@
 ## Interface: 11508
 ## Interface-Classic: 11508
 ## Title: DungeonQuests by |cFFFFF468Rabble|r
-## Version: 1.2
+## Version: 1.0
 ## Author: Rabble
 ## SavedVariables: DungeonQuestsSavedData
 
