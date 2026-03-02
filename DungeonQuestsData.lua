@@ -218,6 +218,135 @@ function DungeonQuests:LoadQuestData()
 		}
 	}
 
+	local BFD = {}
+	BFD.Name = 'Blackfathom Deeps'
+	BFD.Alias = 'BFD'
+	BFD.MinimumLevel = 10
+	BFD.Quests = {
+		{
+			ID = 6563, -- The Essence of Aku'Mai
+			Location = 'Ashenvale',
+			IsShareable = true,
+			Level = 22,
+			MinimumLevel = 17,
+			IsChain = false,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 6561, -- Blackfathom Villainy
+			Location = 'Blackfathom Deeps',
+			IsShareable = true,
+			Level = 27,
+			MinimumLevel = 18,
+			IsChain = false,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 6921, -- Amongst the Ruins
+			Location = 'Ashenvale',
+			IsShareable = true,
+			Level = 27,
+			MinimumLevel = 21,
+			IsChain = false,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 6922, -- Baron Aquanis
+			Location = 'Blackfathom Deeps',
+			IsShareable = false,
+			Level = 30,
+			MinimumLevel = 21,
+			IsChain = false,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 6565, -- Allegiance to the Old Gods
+			Location = 'Ashenvale',
+			IsShareable = true,
+			Level = 26,
+			MinimumLevel = 17,
+			IsChain = true,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 971, -- Knowledge in the Deeps
+			Location = 'Ironforge',
+			IsShareable = true,
+			Level = 23,
+			MinimumLevel = 10,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 1275, -- Researching the Corruption
+			Location = 'Darkshore',
+			IsShareable = true,
+			Level = 24,
+			MinimumLevel = 18,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 1199, -- Twilight Falls
+			Location = 'Darnassus',
+			IsShareable = true,
+			Level = 25,
+			MinimumLevel = 20,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 1198, -- In Search of Thaelrid
+			Location = 'Darnassus',
+			IsShareable = true,
+			Level = 24,
+			MinimumLevel = 18,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 1200, -- Blackfathom Villainy
+			Location = 'Blackfathom Deeps',
+			IsShareable = true,
+			Level = 27,
+			MinimumLevel = 18,
+			IsChain = true,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 1654, -- The Test of Righteousness
+			Location = 'Ironforge',
+			IsShareable = false,
+			Level = 22,
+			MinimumLevel = 20,
+			IsChain = true,
+			Alliance = true,
+			Horde = false,
+			Class = "PALADIN"
+		},
+		{
+			ID = 1740, -- The Orb of Soranruk
+			Location = 'Ratchet',
+			IsShareable = true,
+			Level = 25,
+			MinimumLevel = 20,
+			IsChain = false,
+			Alliance = true,
+			Horde = true,
+			Class = "WARLOCK"
+		},
+	}
+
 	local SFK = {}
 	SFK.Name = 'Shadowfang Keep'
 	SFK.Alias = 'SFK'
@@ -631,6 +760,46 @@ function DungeonQuests:LoadQuestData()
 			Alliance = false,
 			Horde = true
 		},
+		{
+			ID = 2283, -- Necklace Recovery
+			Location = 'Orgrimmar',
+			IsShareable = true,
+			Level = 41,
+			MinimumLevel = 37,
+			IsChain = false,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 2284, -- Necklace Recovery, Take 2
+			Location = 'Orgrimmar',
+			IsShareable = true,
+			Level = 41,
+			MinimumLevel = 37,
+			IsChain = true,
+			Alliance = false,
+			Horde = true
+		},		
+		{
+			ID = 2318, -- Translating the Journal
+			Location = 'Uldaman',
+			IsShareable = true,
+			Level = 42,
+			MinimumLevel = 37,
+			IsChain = true,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 2338, -- Translating the Journal
+			Location = 'Kargath',
+			IsShareable = true,
+			Level = 42,
+			MinimumLevel = 37,
+			IsChain = true,
+			Alliance = false,
+			Horde = true
+		},	
 		{
 			ID = 2341, -- Necklace Recovery, Take 3
 			Location = 'Orgrimmar',
@@ -1209,6 +1378,7 @@ function DungeonQuests:LoadQuestData()
 	DungeonQuests.Dungeons[RFC.Alias] = RFC
 	DungeonQuests.Dungeons[VC.Alias] = VC
 	DungeonQuests.Dungeons[WC.Alias] = WC
+	DungeonQuests.Dungeons[BFD.Alias] = BFD
 	DungeonQuests.Dungeons[SFK.Alias] = SFK
 	DungeonQuests.Dungeons[STOCK.Alias] = STOCK
 	DungeonQuests.Dungeons[RFK.Alias] = RFK
