@@ -1,6 +1,6 @@
 # DungeonQuests
 
-A simple WoW: Classic (including Season of Discovery) addon to track acquisition and completion of dungeon quests
+A simple WoW: Classic and WoW: Forever addon to track acquisition and completion of dungeon quests
 
 Usage:
 
