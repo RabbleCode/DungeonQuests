@@ -158,13 +158,13 @@ function DungeonQuests:UpdatePlayerDungeonProgress(dungeon)
 			totalQuests = totalQuests + 1
 
 			-- Update individual quest progress						
-			if(C_QuestLog.IsQuestFlaggedCompleted(quest.ID)) then
+			if(DungeonQuests:IsQuestCompleted(quest.ID)) then
 				questProgress.IsCompleted = true
 				completedQuests = completedQuests + 1;
-			elseif(IsQuestComplete(quest.ID)) then
+			elseif(DungeonQuests:IsQuestReadyForTurnIn(quest.ID)) then
 				questProgress.IsReadyForTurnIn = true
 				activeQuests = activeQuests + 1
-			elseif(GetQuestLogIndexByID(quest.ID) > 0) then
+			elseif(DungeonQuests:IsQuestActive(quest.ID)) then
 				questProgress.IsActive = true
 				activeQuests = activeQuests + 1
 			elseif(DungeonQuests.Player.Level >= quest.MinimumLevel) then

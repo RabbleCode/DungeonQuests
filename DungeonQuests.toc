@@ -1,10 +1,11 @@
 ## Interface: 11509, 16001
 
 ## Title: DungeonQuests by |cFFFFF468Rabble|r
-## Version: 1.1
+## Version: 1.2
 ## Author: Rabble
 ## SavedVariables: DungeonQuestsSavedData
 
+DungeonQuestsAPIWrappers.lua
 DungeonQuestsData.lua
 DungeonQuests.lua
 DungeonQuests.xml

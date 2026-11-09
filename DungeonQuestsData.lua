@@ -1,5 +1,3 @@
-DungeonQuests = {}
-
 function DungeonQuests:LoadQuestData()
 
 	local RFC = {}
@@ -1400,7 +1398,7 @@ function DungeonQuests:PrimeQuestNamesCache()
 end
 
 function DungeonQuests:PrimeQuestNameCache(quest)
-	quest.Name = C_QuestLog.GetQuestInfo(quest.ID) -- Prime quest data cache
+	quest.Name = DungeonQuests:GetQuestTitle(quest.ID) -- Prime quest data cache
 end
 
 function DungeonQuests:GetQuestLink(quest)
