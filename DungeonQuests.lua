@@ -325,10 +325,9 @@ function DungeonQuests:GetQuestDifficultyColor(playerLevel, questLevel)
 	elseif(questLevel >= playerLevel - 2) then
 		return YELLOW_FONT_COLOR_CODE
 	-- Green if quest level is below a variable threshold depending on player current level
-	else
-		local threshold = GetQuestGreenRange()		
+	else				
 		
-		if(questLevel > playerLevel - threshold) then
+		if(DungeonQuests:IsQuestTrivial(playerLevel, questLevel)) then
 			return GREEN_FONT_COLOR_CODE
 		else
 			return GRAY_FONT_COLOR_CODE

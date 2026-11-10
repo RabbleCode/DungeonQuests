@@ -39,3 +39,15 @@ function DungeonQuests:IsQuestActive(questID)
         return false;
     end
 end
+
+function DungeonQuests:IsQuestTrivial(playerLevel, questLevel)
+    local threshold
+    if(GetQuestGreenRange ~= nil) then -- Classic Era
+        threshold = GetQuestGreenRange()
+    elseif(UnitQuestTrivialLevelRange ~= nil) then -- Forever
+        threshold = UnitQuestTrivialLevelRange("player")
+    else
+        threshold = 0
+    end
+    return (playerLevel - questLevel >= threshold)
+end

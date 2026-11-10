@@ -1,7 +1,7 @@
 ## Interface: 11509, 16001
 
 ## Title: DungeonQuests by |cFFFFF468Rabble|r
-## Version: 1.2
+## Version: 2.0
 ## Author: Rabble
 ## SavedVariables: DungeonQuestsSavedData
 
