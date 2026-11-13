@@ -58,6 +58,173 @@ function DungeonQuests:LoadQuestData()
 		}
 	}
 
+	local HOT = {}
+	HOT.Name = 'Hall of Thans'
+	HOT.Alias = 'HOT'
+	HOT.MinimumLevel = 9
+	HOT.Quests = {
+		{
+			ID = 96403, -- Important Heirlooms
+			Location = 'Ironforge',
+			IsShareable = true,
+			Level = 15,
+			MinimumLevel = 10,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 96394, -- The Restless Dead
+			Location = 'Ironforge',
+			IsShareable = true,
+			Level = 15,
+			MinimumLevel = 10,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 96393, -- Old Ironforge Incursion
+			Location = 'Dun Morogh',
+			IsShareable = true,
+			Level = 16,
+			MinimumLevel = 9,
+			IsChain = true,
+			PreviousQuestID = 96391,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 98423, -- The Treaty of Understanding
+			Location = 'Hall of Thanes',
+			IsShareable = false,
+			Level = 16,
+			MinimumLevel = 9,
+			IsChain = false
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 96395, -- An Ancient Grudge
+			Location = 'Hall of Thanes',
+			IsShareable = false,
+			Level = 15,
+			MinimumLevel = 10,
+			IsChain = false
+			Alliance = true,
+			Horde = false
+		}
+	}
+
+	local ROL = {}
+	ROL.Name = 'Ruins of Lordaeron'
+	ROL.Alias = 'ROL'
+	ROL.MinimumLevel = 9
+	ROL.Quests = {
+		{
+			ID = 92422, -- The Wrath of Rath'mael
+			Location = 'Tirisfal Glades',
+			IsShareable = true,
+			Level = 22,
+			MinimumLevel = 15,
+			IsChain = true,
+			PreviousQuestID = 99156,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 92401, -- A Frightened Request
+			Location = 'The Sepulcher',
+			IsShareable = true,
+			Level = 22,
+			MinimumLevel = 15,
+			IsChain = false,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 92421, -- Light's Justice
+			Location = 'The Undercity',
+			IsShareable = true,
+			Level = 22,
+			MinimumLevel = 15,
+			IsChain = false,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 95216, -- The New Plauge
+			Location = 'The Undercity',
+			IsShareable = true,
+			Level = 22,
+			MinimumLevel = 15,
+			IsChain = true,
+			PreviousQuestID = 451,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 97288, -- Unending Torment
+			Location = 'Ruins of Lordaeron',
+			IsShareable = false,
+			Level = 21,
+			MinimumLevel = 15,
+			IsChain = false,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 95204, -- Crest of Lordaeron
+			Location = 'Ruins of Lordaeron',
+			IsShareable = false,
+			Level = 22,
+			MinimumLevel = 15,
+			IsChain = false,
+			Alliance = false,
+			Horde = true
+		},
+		{
+			ID = 95189, -- Crest of Lordaeron
+			Location = 'Ruins of Lordaeron',
+			IsShareable = false,
+			Level = 22,
+			MinimumLevel = 15,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 95250, -- Abominable Creatures
+			Location = 'Ruins of Lordaeron',
+			IsShareable = false,
+			Level = 21,
+			MinimumLevel = 15,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 95195, -- Bloodied Insignia
+			Location = 'Ruins of Lordaeron',
+			IsShareable = false,
+			Level = 22,
+			MinimumLevel = 15,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		},
+		{
+			ID = 92415, -- Remember That I Love You
+			Location = 'Ruins of Lordaeron',
+			IsShareable = false,
+			Level = 22,
+			MinimumLevel = 15,
+			IsChain = false,
+			Alliance = true,
+			Horde = false
+		}
+	}
+
 	local VC = {}
 	VC.Name = 'The Deadmines'
 	VC.Alias = 'VC'
@@ -1374,6 +1541,7 @@ function DungeonQuests:LoadQuestData()
 
 	DungeonQuests.Dungeons = {}
 	DungeonQuests.Dungeons[RFC.Alias] = RFC
+	DungeonQuests.Dungeons[ROL.Alias] = ROL
 	DungeonQuests.Dungeons[VC.Alias] = VC
 	DungeonQuests.Dungeons[WC.Alias] = WC
 	DungeonQuests.Dungeons[BFD.Alias] = BFD
