@@ -59,7 +59,7 @@ function DungeonQuests:LoadQuestData()
 	}
 
 	local HOT = {}
-	HOT.Name = 'Hall of Thans'
+	HOT.Name = 'Hall of Thanes'
 	HOT.Alias = 'HOT'
 	HOT.MinimumLevel = 9
 	HOT.Quests = {
@@ -100,7 +100,7 @@ function DungeonQuests:LoadQuestData()
 			IsShareable = false,
 			Level = 16,
 			MinimumLevel = 9,
-			IsChain = false
+			IsChain = false,
 			Alliance = true,
 			Horde = false
 		},
@@ -110,7 +110,7 @@ function DungeonQuests:LoadQuestData()
 			IsShareable = false,
 			Level = 15,
 			MinimumLevel = 10,
-			IsChain = false
+			IsChain = false,
 			Alliance = true,
 			Horde = false
 		}
@@ -1541,6 +1541,7 @@ function DungeonQuests:LoadQuestData()
 
 	DungeonQuests.Dungeons = {}
 	DungeonQuests.Dungeons[RFC.Alias] = RFC
+	DungeonQuests.Dungeons[HOT.Alias] = HOT
 	DungeonQuests.Dungeons[ROL.Alias] = ROL
 	DungeonQuests.Dungeons[VC.Alias] = VC
 	DungeonQuests.Dungeons[WC.Alias] = WC
