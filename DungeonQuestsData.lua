@@ -4,6 +4,8 @@ function DungeonQuests:LoadQuestData()
 	RFC.Name = 'Ragefire Chasm'
 	RFC.Alias = 'RFC'
 	RFC.MinimumLevel = 9
+	RFC.Classic = true
+	RFC.Forever = true
 	RFC.Quests = {
 		{
 			ID = 5722, -- Searching for the Lost Satchel
@@ -13,7 +15,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 9,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 5723, -- Testing an Enemy's Strength
@@ -23,7 +27,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 9,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 5761, -- Slaying the Beast
@@ -33,7 +39,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 9,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 5725, -- The Power to Destroy
@@ -43,7 +51,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 9,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 5728, -- Hidden Enemies
@@ -54,7 +64,9 @@ function DungeonQuests:LoadQuestData()
 			IsChain = true,
 			PreviousQuestID = 5272,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		}
 	}
 
@@ -62,6 +74,8 @@ function DungeonQuests:LoadQuestData()
 	HOT.Name = 'Hall of Thanes'
 	HOT.Alias = 'HOT'
 	HOT.MinimumLevel = 9
+	HOT.Classic = false
+	HOT.Forever = true
 	HOT.Quests = {
 		{
 			ID = 96403, -- Important Heirlooms
@@ -71,7 +85,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 10,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = false,
+			Forever = true
 		},
 		{
 			ID = 96394, -- The Restless Dead
@@ -81,7 +97,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 10,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = false,
+			Forever = true
 		},
 		{
 			ID = 96393, -- Old Ironforge Incursion
@@ -92,7 +110,9 @@ function DungeonQuests:LoadQuestData()
 			IsChain = true,
 			PreviousQuestID = 96391,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = false,
+			Forever = true
 		},
 		{
 			ID = 98423, -- The Treaty of Understanding
@@ -102,7 +122,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 9,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = false,
+			Forever = true
 		},
 		{
 			ID = 96395, -- An Ancient Grudge
@@ -112,7 +134,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 10,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = false,
+			Forever = true
 		}
 	}
 
@@ -120,6 +144,8 @@ function DungeonQuests:LoadQuestData()
 	ROL.Name = 'Ruins of Lordaeron'
 	ROL.Alias = 'ROL'
 	ROL.MinimumLevel = 9
+	ROL.Classic = false
+	ROL.Forever = true
 	ROL.Quests = {
 		{
 			ID = 92422, -- The Wrath of Rath'mael
@@ -130,7 +156,9 @@ function DungeonQuests:LoadQuestData()
 			IsChain = true,
 			PreviousQuestID = 99156,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = false,
+			Forever = true
 		},
 		{
 			ID = 92401, -- A Frightened Request
@@ -140,7 +168,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 15,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = false,
+			Forever = true
 		},
 		{
 			ID = 92421, -- Light's Justice
@@ -150,7 +180,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 15,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = false,
+			Forever = true
 		},
 		{
 			ID = 95216, -- The New Plauge
@@ -161,7 +193,9 @@ function DungeonQuests:LoadQuestData()
 			IsChain = true,
 			PreviousQuestID = 451,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = false,
+			Forever = true
 		},
 		{
 			ID = 97288, -- Unending Torment
@@ -171,7 +205,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 15,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = false,
+			Forever = true
 		},
 		{
 			ID = 95204, -- Crest of Lordaeron
@@ -181,7 +217,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 15,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = false,
+			Forever = true
 		},
 		{
 			ID = 95189, -- Crest of Lordaeron
@@ -191,7 +229,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 15,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = false,
+			Forever = true
 		},
 		{
 			ID = 95250, -- Abominable Creatures
@@ -201,7 +241,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 15,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = false,
+			Forever = true
 		},
 		{
 			ID = 95195, -- Bloodied Insignia
@@ -211,7 +253,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 15,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = false,
+			Forever = true
 		},
 		{
 			ID = 92415, -- Remember That I Love You
@@ -221,7 +265,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 15,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = false,
+			Forever = true
 		}
 	}
 
@@ -229,6 +275,8 @@ function DungeonQuests:LoadQuestData()
 	VC.Name = 'The Deadmines'
 	VC.Alias = 'VC'
 	VC.MinimumLevel = 10
+	VC.Classic = true
+	VC.Forever = true
 	VC.Quests = {
 		{
 			ID = 168, -- Collecting Memories
@@ -238,7 +286,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 14,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 167, -- Oh Brother...
@@ -248,7 +298,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 15,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 2040, -- Underground Assault
@@ -258,7 +310,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 15,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 373, -- The Unsent Letter
@@ -269,7 +323,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 16,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 214, -- Red Silk Bandanas
@@ -279,7 +335,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 14,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 166, -- The Defias Brotherhood
@@ -289,7 +347,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 14,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1654, -- The Test of Righteousness
@@ -300,6 +360,8 @@ function DungeonQuests:LoadQuestData()
 			IsChain = true,
 			Alliance = true,
 			Horde = false,
+			Classic = true,
+			Forever = true,
 			Class = 'PALADIN'
 		}
 	}
@@ -308,6 +370,8 @@ function DungeonQuests:LoadQuestData()
 	WC.Name = 'Wailing Caverns'
 	WC.Alias = 'WC'
 	WC.MinimumLevel = 15
+	WC.Classic = true
+	WC.Forever = true
 	WC.Quests = {
 		{
 			ID = 962, -- Serpent Bloom
@@ -317,7 +381,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 14,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1491, -- Smart Drinks
@@ -328,7 +394,9 @@ function DungeonQuests:LoadQuestData()
 			IsChain = true,
 			PreviousQuestID = 865,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 959, -- Trouble at the Docks
@@ -338,7 +406,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 14,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1486, -- Deviate Hides
@@ -348,7 +418,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 13,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1487, -- Deviate Eradication
@@ -358,7 +430,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 15,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 914, -- Leaders of the Fang
@@ -369,7 +443,9 @@ function DungeonQuests:LoadQuestData()
 			IsChain = true,
 			PreviousQuestID = 1490,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},		
 		{
 			ID = 6981, -- The Glowing Shard
@@ -379,7 +455,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 15,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		}
 	}
 
@@ -387,6 +465,8 @@ function DungeonQuests:LoadQuestData()
 	BFD.Name = 'Blackfathom Deeps'
 	BFD.Alias = 'BFD'
 	BFD.MinimumLevel = 10
+	BFD.Classic = true
+	BFD.Forever = true
 	BFD.Quests = {
 		{
 			ID = 6563, -- The Essence of Aku'Mai
@@ -396,7 +476,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 17,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 6561, -- Blackfathom Villainy
@@ -406,7 +488,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 18,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 6921, -- Amongst the Ruins
@@ -416,7 +500,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 21,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 6922, -- Baron Aquanis
@@ -426,7 +512,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 21,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 6565, -- Allegiance to the Old Gods
@@ -436,7 +524,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 17,
 			IsChain = true,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 971, -- Knowledge in the Deeps
@@ -446,7 +536,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 10,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1275, -- Researching the Corruption
@@ -456,7 +548,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 18,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1199, -- Twilight Falls
@@ -466,7 +560,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 20,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1198, -- In Search of Thaelrid
@@ -476,7 +572,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 18,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1200, -- Blackfathom Villainy
@@ -486,7 +584,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 18,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1654, -- The Test of Righteousness
@@ -497,6 +597,8 @@ function DungeonQuests:LoadQuestData()
 			IsChain = true,
 			Alliance = true,
 			Horde = false,
+			Classic = true,
+			Forever = true,
 			Class = "PALADIN"
 		},
 		{
@@ -508,6 +610,8 @@ function DungeonQuests:LoadQuestData()
 			IsChain = false,
 			Alliance = true,
 			Horde = true,
+			Classic = true,
+			Forever = true,
 			Class = "WARLOCK"
 		},
 	}
@@ -516,6 +620,8 @@ function DungeonQuests:LoadQuestData()
 	SFK.Name = 'Shadowfang Keep'
 	SFK.Alias = 'SFK'
 	SFK.MinimumLevel = 18
+	SFK.Classic = true
+	SFK.Forever = true
 	SFK.Quests = {
 		{
 			ID = 1013, -- The Book of Ur
@@ -525,7 +631,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 16,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1098, -- Deathstalkers in Shadowfang
@@ -535,7 +643,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 18,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1014, -- Arugal Must Die
@@ -545,7 +655,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 18,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1740, -- The Orb of Soran'ruk
@@ -556,6 +668,8 @@ function DungeonQuests:LoadQuestData()
 			IsChain = false,			
 			Alliance = true,
 			Horde = true,
+			Classic = true,
+			Forever = true,
 			Class = "WARLOCK"
 		},
 		{
@@ -568,6 +682,8 @@ function DungeonQuests:LoadQuestData()
 			PreviousQuestID = 1653,
 			Alliance = true,
 			Horde = false,
+			Classic = true,
+			Forever = true,
 			Class = "PALADIN"
 		}
 	}
@@ -578,6 +694,8 @@ function DungeonQuests:LoadQuestData()
 	RFK.Name = 'Razorfen Kraul'
 	RFK.Alias = 'RFK'
 	RFK.MinimumLevel = 25
+	RFK.Classic = true
+	RFK.Forever = true
 	RFK.Quests = {
 		{
 			ID = 1102, -- A Vengeful Fate
@@ -587,7 +705,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 29,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1109, -- Going, going, Guano!
@@ -597,7 +717,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 30,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 6522, -- An Unholy Alliance
@@ -607,7 +729,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 28,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1101, -- The Crone of the Kraul
@@ -617,7 +741,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 29,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1142, -- Mortality Wanes
@@ -627,7 +753,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 25,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1221, -- Blueleaf Tubers
@@ -637,7 +765,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 20,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1144, -- Willix the Importer
@@ -647,7 +777,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 22,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		}
 	}
 
@@ -655,6 +787,8 @@ function DungeonQuests:LoadQuestData()
 	STOCK.Name = 'The Stockade'
 	STOCK.Alias = 'STOCK'
 	STOCK.MinimumLevel = 22
+	STOCK.Classic = true
+	STOCK.Forever = true
 	STOCK.Quests = {
 		{
 			ID = 387, -- Quell the Uprising
@@ -664,7 +798,9 @@ function DungeonQuests:LoadQuestData()
 			Level = 26,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 388, -- The Color of Blood
@@ -674,7 +810,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 22,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 377, -- Crime and Punishment
@@ -684,7 +822,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 22,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 386, -- What Comes Around...
@@ -694,7 +834,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 22,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 378, -- The Fury Runs Deep
@@ -704,7 +846,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 25,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 391, -- The Stockade Riots
@@ -714,7 +858,9 @@ function DungeonQuests:LoadQuestData()
 			Level = 29,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		}
 	}
 
@@ -722,6 +868,8 @@ function DungeonQuests:LoadQuestData()
 	RFD.Name = 'Razorfen Downs'
 	RFD.Alias = 'RFD'
 	RFD.MinimumLevel = 35
+	RFD.Classic = true
+	RFD.Forever = true
 	RFD.Quests = {
 		{
 			ID = 3341, -- Bring the End
@@ -731,7 +879,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 37,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 6521, -- An Unholy Alliance
@@ -742,7 +892,9 @@ function DungeonQuests:LoadQuestData()
 			IsChain = true,
 			PreviousQuestID = 6522,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 3636, -- Bring the Light
@@ -752,7 +904,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 39,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 6626, -- A Host of Evil
@@ -772,7 +926,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 32,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		}
 	}
 
@@ -780,6 +936,8 @@ function DungeonQuests:LoadQuestData()
 	SM.Name = 'Scarlet Monastery'
 	SM.Alias = 'SM'
 	SM.MinimumLevel = 26
+	SM.Classic = true
+	SM.Forever = true
 	SM.Quests = {
 		{
 			ID = 1048, -- Into the Scarlet Monastery
@@ -789,7 +947,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 33,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1053, -- In the Name of the Light
@@ -799,7 +959,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 34,
 			IsChain = true,		
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1051, -- Vorrel's Revenge
@@ -809,7 +971,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 25,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1113, -- Hearts of Zeal
@@ -820,7 +984,9 @@ function DungeonQuests:LoadQuestData()
 			IsChain = true,
 			PreviousQuestID = 1109, -- Going Going Guano
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1049, -- Compendium of the Fallen
@@ -831,6 +997,8 @@ function DungeonQuests:LoadQuestData()
 			IsChain = false,
 			Alliance = false,
 			Horde = true,
+			Classic = true,
+			Forever = true,
 			Race = {'Orc','Tauren','Troll'}
 		},
 		{
@@ -842,7 +1010,9 @@ function DungeonQuests:LoadQuestData()
 			IsChain = true,
 			PreviousQuestID = 1159, -- Test of Lore
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1050, -- Mythology of the Titans
@@ -852,7 +1022,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 28,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1951, -- Rituals of Power (Mage)
@@ -864,6 +1036,8 @@ function DungeonQuests:LoadQuestData()
 			PreviousQuestID = 1950, -- Get the Scoop
 			Alliance = true,
 			Horde = true,
+			Classic = true,
+			Forever = true,
 			Class = 'MAGE'
 		}
 	}
@@ -874,6 +1048,8 @@ function DungeonQuests:LoadQuestData()
 	ULDA.Name = 'Uldaman'
 	ULDA.Alias = 'ULDA'
 	ULDA.MinimumLevel = 37
+	ULDA.Classic = true
+	ULDA.Forever = true
 	ULDA.Quests = {
 		{
 			ID = 2418, -- Power Stones
@@ -883,7 +1059,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 30,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 709, -- Solution to Doom
@@ -893,7 +1071,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 30,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 2278, -- The Platinum Discs
@@ -903,7 +1083,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 40,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 2342, -- Reclaimed Treasures
@@ -913,7 +1095,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 33,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 2202, -- Uldaman Reagent Run
@@ -923,7 +1107,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 36,
 			IsChain = true,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 2283, -- Necklace Recovery
@@ -933,7 +1119,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 37,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 2284, -- Necklace Recovery, Take 2
@@ -943,7 +1131,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 37,
 			IsChain = true,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},		
 		{
 			ID = 2318, -- Translating the Journal
@@ -953,7 +1143,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 37,
 			IsChain = true,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 2338, -- Translating the Journal
@@ -963,7 +1155,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 37,
 			IsChain = true,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},	
 		{
 			ID = 2341, -- Necklace Recovery, Take 3
@@ -973,7 +1167,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 37,
 			IsChain = true,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1360, -- Reclaimed Treasures
@@ -983,7 +1179,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 33,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 722, -- Amulet of Secrets
@@ -993,7 +1191,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 35,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 704, -- Agmond's Fate
@@ -1003,7 +1203,9 @@ function DungeonQuests:LoadQuestData()
 			Level = 38,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1139, -- The Lost Tablets of Will
@@ -1013,7 +1215,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 35,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 2204, -- Restoring the Necklace
@@ -1023,7 +1227,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 37,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 2398, -- The Lost Dwarves
@@ -1033,7 +1239,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 35,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 2240, -- The Hidden Chamber
@@ -1043,7 +1251,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 35,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 2200, -- Back to Uldaman
@@ -1053,7 +1263,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 37,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 2201, -- Find the Gems
@@ -1063,7 +1275,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 37,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 17, -- Uldaman Reagent Run
@@ -1073,7 +1287,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 38,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 1956, -- Power in Uldaman
@@ -1084,6 +1300,8 @@ function DungeonQuests:LoadQuestData()
 			IsChain = true,
 			Alliance = true,
 			Horde = true,
+			Classic = true,
+			Forever = true,
 			Class = 'MAGE'
 		}
 	}
@@ -1092,6 +1310,8 @@ function DungeonQuests:LoadQuestData()
 	ZF.Name = 'Zul\'Farrak'
 	ZF.Alias = 'ZF'
 	ZF.MinimumLevel = 40
+	ZF.Classic = true
+	ZF.Forever = true
 	ZF.Quests = {
 		{
 			ID = 2768, -- Divino-matic Rod
@@ -1101,7 +1321,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 40,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 2865, -- Scarab Shells
@@ -1111,7 +1333,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 40,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 3042, -- Troll Temper
@@ -1121,7 +1345,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 40,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 2846, -- Tiara of the Deep
@@ -1131,7 +1357,9 @@ function DungeonQuests:LoadQuestData()
 			Level = 46,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 2770, -- Gahz'rilla
@@ -1141,7 +1369,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 40,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 3527, -- The Prophecy of Mosh'aru
@@ -1151,7 +1381,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 40,
 			IsChain = true,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 2936, -- The Spider God
@@ -1161,7 +1393,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 40,
 			IsChain = true,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 2991, -- Nekrum's Medallion
@@ -1171,7 +1405,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 40,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		}
 	}
 
@@ -1179,6 +1415,8 @@ function DungeonQuests:LoadQuestData()
 	MARA.Name = 'Maraudon'
 	MARA.Alias = 'MARA'
 	MARA.MinimumLevel = 40
+	MARA.Classic = true
+	MARA.Forever = true
 	MARA.Quests = {
 		{
 			ID = 7028, -- Twisted Evils
@@ -1188,7 +1426,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 41,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 7067, -- The Pariah's Instructions
@@ -1198,7 +1438,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 39,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 7044, -- Legends of Maraudon
@@ -1208,7 +1450,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 41,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},		
 		{
 			ID = 7066, -- Seed of Life
@@ -1218,7 +1462,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 39,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 7046, -- The Scepter of Celebras
@@ -1228,7 +1474,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 41,
 			IsChain = true,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 7068, -- Shadowshard Fragments
@@ -1238,7 +1486,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 39,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 7029, -- Vyletongue Corruption
@@ -1248,7 +1498,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 39,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 7064, -- Corruption of Earth and Seed
@@ -1258,7 +1510,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 45,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 7070, -- Shadowshard Fragments
@@ -1268,7 +1522,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 39,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 7041, -- Vyletongue Corruption
@@ -1278,7 +1534,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 41,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 7065, -- Corruption of Earth and Seed
@@ -1288,7 +1546,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 45,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		}
 	}
 
@@ -1296,6 +1556,8 @@ function DungeonQuests:LoadQuestData()
 	BRD.Name = 'Blackrock Depths'
 	BRD.Alias = 'BRD'
 	BRD.MinimumLevel = 40
+	BRD.Classic = true
+	BRD.Forever = true
 	BRD.Quests = {
 		{
 			ID = 4081, -- KILL ON SIGHT: Dark Iron Dwarves
@@ -1305,7 +1567,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 48,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 4082, -- KILL ON SIGHT: High Ranking Dark Iron Officials
@@ -1315,7 +1579,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 50,
 			IsChain = true,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 4134, -- Lost Thunderbrew Recipe
@@ -1325,7 +1591,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 50,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 4063, -- The Rise of the Machines
@@ -1335,7 +1603,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 52,
 			IsChain = true,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 3906, -- Disharmony of Flame
@@ -1345,7 +1615,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 48,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 3907, -- Disharmony of Fire
@@ -1355,7 +1627,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 48,
 			IsChain = true,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 3981, -- Commander Gor'shak
@@ -1365,7 +1639,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 48,
 			IsChain = true,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 7201, -- The Last Element
@@ -1375,7 +1651,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 48,
 			IsChain = false,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 4132, -- Operation: Death to Angerforge
@@ -1385,7 +1663,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 52,
 			IsChain = true,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 4003, -- The Royal Rescue
@@ -1395,7 +1675,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 48,
 			IsChain = true,
 			Alliance = false,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 4262, -- Overmaster Pyron
@@ -1405,7 +1687,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 48,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 4263, -- Incendius!
@@ -1415,7 +1699,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 48,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 4286, -- The Good Stuff
@@ -1425,7 +1711,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 50,
 			IsChain = false,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 4126, -- Hurley Blackbreath
@@ -1435,7 +1723,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 50,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 4341, -- Kharan Mighthammer
@@ -1445,7 +1735,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 50,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 4362, -- The Fate of the Kingdom
@@ -1455,7 +1747,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 50,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 4241, -- Marshal Windsor
@@ -1465,7 +1759,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 48,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 4322, -- Jail Break!
@@ -1475,7 +1771,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 50,
 			IsChain = true,
 			Alliance = true,
-			Horde = false
+			Horde = false,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 4136, -- Ribbly Screwspigot
@@ -1485,7 +1783,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 48,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 4123, -- The Heart of the Mountain
@@ -1495,7 +1795,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 50,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 7848, -- Attunement to the Core
@@ -1505,7 +1807,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 55,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 3802, -- Dark Iron Legacy
@@ -1515,7 +1819,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 48,
 			IsChain = true,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 4201, -- The Love Potion
@@ -1525,7 +1831,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 50,
 			IsChain = false,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		},
 		{
 			ID = 4024, -- A Taste of Flame
@@ -1535,7 +1843,9 @@ function DungeonQuests:LoadQuestData()
 			MinimumLevel = 52,
 			IsChain = true,
 			Alliance = true,
-			Horde = true
+			Horde = true,
+			Classic = true,
+			Forever = true
 		}
 	}
 
