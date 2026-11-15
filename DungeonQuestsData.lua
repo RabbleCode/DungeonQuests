@@ -2111,6 +2111,7 @@ function DungeonQuests:LoadQuestData()
 	DungeonQuests.Dungeons[ESW.Alias] = ESW
 	DungeonQuests.Dungeons[STOCK.Alias] = STOCK
 	DungeonQuests.Dungeons[RFK.Alias] = RFK
+	DungeonQuests.Dungeons[COD.Alias] = COD
 	DungeonQuests.Dungeons[SM.Alias] = SM
 	DungeonQuests.Dungeons[RFD.Alias] = RFD
 	DungeonQuests.Dungeons[ULDA.Alias] = ULDA
