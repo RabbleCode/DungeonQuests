@@ -688,7 +688,150 @@ function DungeonQuests:LoadQuestData()
 		}
 	}
 
-
+	local ESW = {}
+	ESW.Name = 'Exacavation Site: Wetlands'
+	ESW.Alias = 'ESW'
+	ESW.MinimumLevel = 18
+	ESW.Classic = false
+	ESW.Forever = true
+	ESW.Quests = {
+		{
+			ID = 95697, -- Changing Tastes
+			Location = 'Orgrimmar',
+			IsShareable = true,
+			Level = 31,
+			MinimumLevel = 24,
+			IsChain = false,
+			Alliance = false,
+			Horde = true,
+			Classic = false,
+			Forever = true
+		},
+		{
+			ID = 95664, -- Elder Knowledge
+			Location = 'Excavation Site: Wetlands',
+			IsShareable = false,
+			Level = 31,
+			MinimumLevel = 24,
+			IsChain = false,
+			Alliance = false,
+			Horde = true,
+			Classic = false,
+			Forever = true
+		},
+		{
+			ID = 98823, -- Earthen Echo
+			Location = 'Thunderbluff',
+			IsShareable = false,
+			Level = 31,
+			MinimumLevel = 24,
+			IsChain = true,
+			PreviousQuestID = 95664,
+			Alliance = false,
+			Horde = true,
+			Classic = false,
+			Forever = true
+		},
+		{
+			ID = 95682, -- Open the Maw
+			Location = 'Thunderbluff',
+			IsShareable = false,
+			Level = 31,
+			MinimumLevel = 24,
+			IsChain = true,
+			PreviousQuestID = 95663,
+			Alliance = false,
+			Horde = true,
+			Classic = false,
+			Forever = true
+		},
+		{
+			ID = 98815, -- Highland Hides
+			Location = 'Westlands',
+			IsShareable = true,
+			Level = 28,
+			MinimumLevel = 24,
+			IsChain = false,
+			Alliance = true,
+			Horde = false,
+			Classic = false,
+			Forever = true
+		},
+		{
+			ID = 95772, -- Songblade Search
+			Location = 'Redridge Mountains',
+			IsShareable = true,
+			Level = 31,
+			MinimumLevel = 24,
+			IsChain = false,
+			Alliance = true,
+			Horde = false,
+			Classic = false,
+			Forever = true
+		},
+		{
+			ID = 95646, -- Horrors in the Highland
+			Location = 'Wetlands',
+			IsShareable = true,
+			Level = 31,
+			MinimumLevel = 24,
+			IsChain = false,
+			Alliance = true,
+			Horde = false,
+			Classic = false,
+			Forever = true
+		},
+		{
+			ID = 95647, -- Lost in the Thicket Things
+			Location = 'Wetlands',
+			IsShareable = true,
+			Level = 31,
+			MinimumLevel = 24,
+			IsChain = false,
+			Alliance = true,
+			Horde = false,
+			Classic = false,
+			Forever = true
+		},
+		{
+			ID = 95809, -- Heartwoven
+			Location = 'Wetlands',
+			IsShareable = false,
+			Level = 31,
+			MinimumLevel = 24,
+			IsChain = true,
+			PreviousQuestID = 95647,
+			Alliance = true,
+			Horde = false,
+			Classic = false,
+			Forever = true
+		},
+		{
+			ID = 95810, -- Lost Relic Carry
+			Location = 'Excavation Site: Wetlands',
+			IsShareable = false,
+			Level = 31,
+			MinimumLevel = 24,
+			IsChain = false,
+			Alliance = true,
+			Horde = false,
+			Classic = false,
+			Forever = true
+		},
+		{
+			ID = 98824, -- Prehistoric Prism
+			Location = 'Wetlands',
+			IsShareable = false,
+			Level = 31,
+			MinimumLevel = 24,
+			IsChain = true,
+			PreviousQuestID = 95810,
+			Alliance = true,
+			Horde = false,
+			Classic = false,
+			Forever = true
+		},
+	}
 
 	local RFK = {}
 	RFK.Name = 'Razorfen Kraul'
@@ -1857,6 +2000,7 @@ function DungeonQuests:LoadQuestData()
 	DungeonQuests.Dungeons[WC.Alias] = WC
 	DungeonQuests.Dungeons[BFD.Alias] = BFD
 	DungeonQuests.Dungeons[SFK.Alias] = SFK
+	DungeonQuests.Dungeons[ESW.Alias] = ESW
 	DungeonQuests.Dungeons[STOCK.Alias] = STOCK
 	DungeonQuests.Dungeons[RFK.Alias] = RFK
 	DungeonQuests.Dungeons[SM.Alias] = SM

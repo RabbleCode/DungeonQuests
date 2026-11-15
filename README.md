@@ -15,11 +15,12 @@ Dungeon aliases:
 
 - `RFC` - Ragefire Chasm
 - `HOT` - Hall of Thanes
-- `VC` - Deadmines
+- `VC` - Deadmines (Van Cleef)
 - `ROL` - Ruins of Lordaeron
 - `WC` - Wailing Caverns
 - `BFD` - Blackfathom Deeps
 - `SFK` - Shadowfang Keep
+- `ESW` - Excavation Site: Wetlands
 - `RFK` - Razorfen Kraul
 - `STOCK` - The Stockade
 - `RFD` - Razorfen Downs
