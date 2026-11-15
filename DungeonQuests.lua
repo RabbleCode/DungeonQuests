@@ -52,7 +52,10 @@ end
 function DungeonQuests:LoadPlayerData()
 
 	DungeonQuests.Player = {}
-	DungeonQuests.Player.Name = UnitName("player");
+	DungeonQuests.Player.Name = UnitName("player")	
+	if(DungeonQuests.IsForever) then
+		DungeonQuests.Player.Name = DungeonQuests.Player.Name.." "..select(2,UnitName("player"));
+	end
 	DungeonQuests.Player.Realm = GetRealmName();
 	DungeonQuests.Player.Faction = select(1, UnitFactionGroup("player")) -- Select the non-localized (English) faction name
 	DungeonQuests.Player.Class = select(2, UnitClass("player")) -- Select the non-localized (English) class name
@@ -61,7 +64,6 @@ function DungeonQuests:LoadPlayerData()
 	DungeonQuests.Player.ColoredClassName = DungeonQuests.Player.ClassColor..DungeonQuests.Player.Class..'|r'
 	DungeonQuests.Player.ClassColoredPlayerName = DungeonQuests.Player.ClassColor..DungeonQuests.Player.Name..'|r'
 	DungeonQuests.Player.Level = UnitLevel("player");
-	DungeonQuests.Player.NameWithRealm = DungeonQuests.Player.Name.." - "..DungeonQuests.Player.Realm
 end
 
 function DungeonQuests:LoadSavedData()
