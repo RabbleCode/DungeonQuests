@@ -23,6 +23,7 @@ Dungeon aliases:
 - `ESW` - Excavation Site: Wetlands
 - `RFK` - Razorfen Kraul
 - `STOCK` - The Stockade
+- `COD` - City of Dalaran
 - `RFD` - Razorfen Downs
 - `SM` - Scarlet Monastery
 - `ULDA` - Uldaman

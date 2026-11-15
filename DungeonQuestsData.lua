@@ -1007,6 +1007,114 @@ function DungeonQuests:LoadQuestData()
 		}
 	}
 
+	local COD = {}
+	COD.Name = 'City of Dalaran'
+	COD.Alias = 'COD'
+	COD.MinimumLevel = 18
+	COD.Classic = false
+	COD.Forever = true
+	COD.Quests = {
+		{
+			ID = 96986, -- The Grave Knight
+			Location = 'Tarren Mill',
+			IsShareable = true,
+			Level = 33,
+			MinimumLevel = 24,
+			IsChain = false,
+			Alliance = false,
+			Horde = true,
+			Classic = false,
+			Forever = true
+		},
+		{
+			ID = 96988, -- Source of Power
+			Location = 'Undercity',
+			IsShareable = true,
+			Level = 33,
+			MinimumLevel = 24,
+			IsChain = false,
+			Alliance = false,
+			Horde = true,
+			Classic = false,
+			Forever = true
+		},
+		{
+			ID = 96984, -- Heart of Disruption
+			Location = 'City of Dalaran',
+			IsShareable = false,
+			Level = 33,
+			MinimumLevel = 24,
+			IsChain = true,
+			PreviousQuestID = 92434,
+			Alliance = false,
+			Horde = true,
+			Classic = false,
+			Forever = true
+		},
+		{
+			ID = 96987, -- Opportunistic Education
+			Location = 'City of Dalaran',
+			IsShareable = true,
+			Level = 33,
+			MinimumLevel = 24,
+			IsChain = false,
+			Alliance = false,
+			Horde = true,
+			Classic = false,
+			Forever = true
+		},
+		{
+			ID = 92489, -- Power Overwhelming
+			Location = 'Stormwind',
+			IsShareable = true,
+			Level = 33,
+			MinimumLevel = 24,
+			IsChain = false,
+			Alliance = true,
+			Horde = false,
+			Classic = false,
+			Forever = true
+		},
+		{
+			ID = 92489, -- Heart of Disruption
+			Location = 'City of Dalaran',
+			IsShareable = false,
+			Level = 33,
+			MinimumLevel = 24,
+			IsChain = true,
+			PreviousQuestID = 92432,
+			Alliance = true,
+			Horde = false,
+			Classic = false,
+			Forever = true
+		},
+		{
+			ID = 92456, -- A Green Sample
+			Location = 'Stormwind',
+			IsShareable = true,
+			Level = 33,
+			MinimumLevel = 24,
+			IsChain = false,
+			Alliance = true,
+			Horde = false,
+			Classic = false,
+			Forever = true
+		},
+		{
+			ID = 92457, -- Starving Arcane
+			Location = 'City of Dalaran',
+			IsShareable = true,
+			Level = 33,
+			MinimumLevel = 24,
+			IsChain = true,
+			PreviousQuestID = 92432,
+			Alliance = true,
+			Horde = false,
+			Classic = false,
+			Forever = true
+		}
+	}
+
 	local RFD = {}
 	RFD.Name = 'Razorfen Downs'
 	RFD.Alias = 'RFD'
