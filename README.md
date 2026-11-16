@@ -1,3 +1,7 @@
+# DISCONTINUED
+
+This addon is discontinued. The addon [DungeonJournal](https://www.curseforge.com/wow/addons/dungeonjournal) is a superior addon in every way.
+
 # DungeonQuests
 
 A simple WoW: Classic and WoW: Forever addon to track acquisition and completion of dungeon quests
